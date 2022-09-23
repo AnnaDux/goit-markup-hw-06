@@ -157,7 +157,7 @@ a {
   padding-top: 32px;
   padding-bottom: 32px;
   display: inline-block;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
  
 }
@@ -921,56 +921,6 @@ margin-bottom: 20px;
   background-color: var(--accent-color);
 }
 
-
-/* .footer-subscribe-form{
-  padding-top: 72px;
-  padding-left: 93px;
-  padding-bottom: 94px;
-}
-
-.subscribe-form-title{
-font-weight: 700;
-font-size: 14px;
-line-height: 16px;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: var(--bg-white);
-margin-bottom: 20px;
-}
-
-.container-for-flex{
-  display: flex;
-}
-
-
-
-.email-input-form{
-  width: 358px;
-  height: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-  border-radius: 4px;
-  margin-right: 12px;
-}
-
-.footer-send-button{
-width: 200px;
-height: 50px;
-display: flex;
-justify-content: center;
-align-items: center;
-background: #2196F3;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-border-radius: 4px;
-padding: 10px 28px;
-color: var(--bg-white);
-fill: var(--bg-white);
-}
-
-.button-text{
-  margin-right: 10px;
-} */
-
 .subscribe-form{
   padding-top: 72px;
   padding-left: 93px;
@@ -1010,7 +960,17 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 border-radius: 4px;
 margin-right: 12px;
+outline: none;
+transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.mail-input:focus{
+  border: 1px solid var(--accent-color);
+}
+
+
+
+
 
 .button-subscribe{
 width: 200px;
@@ -1060,16 +1020,177 @@ margin-bottom: 12px;
 
 .input-name{
   display: block;
-
-
+  margin-bottom:4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--base-text);
 }
+
 
 .input-icon{
+position: absolute;
+transition: transformX(100%);
+margin: 12px 11px;
+fill: var(--black);
+z-index: 10;
+transition:  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 
+.input-field{
+position: relative;
+width: 448px;
+height: 40px;
+border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+padding-left:42px;
+outline:none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-field:not(:first-child){
+  margin-bottom: 10px;
+}
+
+.input-field-for-coment{
+width: 448px;
+height: 120px;
+border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+
+padding: 12px 16px;
+margin-bottom: 20px;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+letter-spacing: 0.01em;
+color: var(--black);
+outline: none;
+transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-field-for-coment::placeholder{
+ color: rgba(117, 117, 117, 0.5);    
+}
+
+.input-field-for-coment:focus-within{
+border: 1px solid #2196F3;
+border-radius: 4px;
+}
+
+.agreement-label{
+  position: relative;
+  width: 425px;
+  height: 24px;
+  margin-bottom:30px;
+  text-align: center;
+
+  display: inline-block;
+}
+
+
+.check-icon{
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--black);
+  border-radius: 4px;
+  fill: var(--bg-white); 
+  margin-right: 7px;
+}
+
+.agreement-checkbox{
+  /* appearance: none;  */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.agreement-checkbox:checked + .check-icon{
+  background-color: var(--accent-color);
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--accent-color);
+  fill: var(--bg-white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.agreement-text{
+  /* display: inline-block; */
+  margin-bottom: 30px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color:var(--base-text);
 
 }
-.input-field{
- 
 
+.agreement-link{
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+
+letter-spacing: 0.03em;
+text-decoration-line: underline;
+color:var(--accent-color);
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-send-form{
+max-width: 200px;
+min-height: 50px;
+width:100%;
+height: 100%;
+background: var(--accent-color);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+border-radius: 4px;
+
+font-weight: 700;
+font-size: 16px;
+line-height: 30px;
+letter-spacing: 0.06em;
+color: var(--bg-white);
+}
+
+
+
+.input-form:focus-within .input-field{
+
+border-color:  var(--accent-color);
+border-radius: 4px;
+}
+
+
+.input-form:focus-within .input-icon{
+fill: var(--accent-color);
 }
